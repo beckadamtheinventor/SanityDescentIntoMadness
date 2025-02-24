@@ -13,7 +13,7 @@ public class Darkness implements IPassiveSanitySource
     public float get(@Nonnull ServerPlayer player, @Nonnull ISanity cap, @Nonnull ResourceLocation dim)
     {
         if (player.level.getMaxLocalRawBrightness(player.blockPosition()) <= ConfigProxy.getDarknessThreshold(dim))
-            return ConfigProxy.getDarkness(dim);
+            return ConfigProxy.getDarkness(dim) * ConfigProxy.getDarknessWhilePassengerMultiplier(dim);
 
         return 0;
     }
