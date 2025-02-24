@@ -61,6 +61,12 @@ public abstract class ConfigProxy
         return ConfigManager.proxyi("sanity.passive.darkness_threshold", dim);
     }
 
+    public static float getDarknessWhilePassengerMultiplier(ResourceLocation dim)
+    {
+        return ConfigManager.proxyd2f("sanity.passive.darkness_while_passenger", dim);
+    }
+
+
     public static float getLightness(ResourceLocation dim)
     {
         return ConfigManager.proxyd2f("sanity.passive.lightness", dim);

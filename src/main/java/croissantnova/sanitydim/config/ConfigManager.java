@@ -47,6 +47,7 @@ public abstract class ConfigManager
         proxies.put("sanity.passive.monster", new ProxyValueEntry<>(() -> getDefault().m_monster.get(), ConfigManager::finalizePassive));
         proxies.put("sanity.passive.darkness", new ProxyValueEntry<>(() -> getDefault().m_darkness.get(), ConfigManager::finalizePassive));
         proxies.put("sanity.passive.darkness_threshold", new ProxyValueEntry<>(() -> getDefault().m_darknessThreshold.get(), ConfigManager::noFinalize));
+        proxies.put("sanity.passive.darkness_while_passenger", new ProxyValueEntry<>(() -> getDefault().m_darknessWhilePassenger.get(), ConfigManager::noFinalize));
         proxies.put("sanity.passive.lightness", new ProxyValueEntry<>(() -> getDefault().m_lightness.get(), ConfigManager::finalizePassive));
         proxies.put("sanity.passive.lightness_threshold", new ProxyValueEntry<>(() -> getDefault().m_lightnessThreshold.get(), ConfigManager::noFinalize));
         proxies.put("sanity.passive.block_stuck", new ProxyValueEntry<>(() -> getDefault().m_blockStuck.get(), ConfigManager::finalizePassive));

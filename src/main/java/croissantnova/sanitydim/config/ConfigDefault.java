@@ -24,6 +24,7 @@ public class ConfigDefault
     public final DoubleValue m_monster;
     public final DoubleValue m_darkness;
     public final IntValue m_darknessThreshold;
+    public final DoubleValue m_darknessWhilePassenger;
     public final DoubleValue m_lightness;
     public final IntValue m_lightnessThreshold;
     public final DoubleValue m_blockStuck;
@@ -126,6 +127,9 @@ public class ConfigDefault
         m_darknessThreshold = builder
                 .comment("Maximum light level considered to be darkness (inclusive)")
                 .defineInRange("darkness_threshold", 4, 0, 15);
+        m_darknessWhilePassenger = builder
+                .comment("Sanity gain multiplier while player is a passenger. (when seated in a boat, minecart, horse, donkey, etc) Set to 0 to disable sanity gain while the player is a passenger.")
+                .defineInRange("m_darknessWhilePassenger", 1.0, -100.0, 100.0);
         m_lightness = builder
                 .comment("Players will gain this amount of sanity per second while being in the light")
                 .defineInRange("lightness", 0.0, -100.0, 100.0);
