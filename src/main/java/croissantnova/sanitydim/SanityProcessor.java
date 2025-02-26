@@ -307,8 +307,10 @@ public final class SanityProcessor
         player.getCapability(SanityProvider.CAP).ifPresent(s ->
         {
             ResourceLocation dimLoc = player.level.dimension().location();
-            addSanity(s, amount * ConfigProxy.getAnimalHurtRatio(player.level.dimension().location()) * (animal.isBaby() ? 2.0f : 1.0f), player);
+            if (animal.isAggressive()) {
+                addSanity(s, amount * ConfigProxy.getAnimalHurtRatio(dimLoc) * (animal.isBaby() ? 2.0f : 1.0f), player);
 //            s.setSanity(s.getSanity() + amount * ConfigProxy.getAnimalHurtRatio(player.level.dimension().location()) * (animal.isBaby() ? 2.0f : 1.0f));
+            }
         });
     }
 
